@@ -1,0 +1,3 @@
+before_deploy:
+  - echo "Creating Custom Domain"
+  - serverless create_domain --stage $SEED_STAGE

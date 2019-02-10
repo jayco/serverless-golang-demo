@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Health Endpoint",
+      "type": "go",
+      "request": "launch",
+      "mode": "remote",
+      "remotePath": "/src/internal/routes/health/main.go",
+      "port": 5986,
+      "host": "127.0.0.1",
+      "program": "${workspaceRoot}/internal/routes/health/main.go",
+      "env": {},
+      "args": [],
+      "trace": "verbose"
+    }
+  ]
+}

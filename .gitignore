@@ -1,0 +1,35 @@
+# Serverless directories
+.serverless
+
+# pyenv files
+.python-version
+
+# golang output binary directory
+bin
+
+# ide folders
+# .vscode uncomment if you have your own config
+.idea
+
+# debug folder for local debugging
+.debug
+sam-local-template
+
+# golang vendor (dependencies) directory
+vendor
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# node modules used in local development
+node_modules

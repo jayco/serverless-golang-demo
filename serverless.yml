@@ -1,0 +1,60 @@
+service: base-api-v1
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  # Add in your Route53 domain name here
+  domain: "api-v1.yourdomain.com"
+  # Add in your ACM certificate here
+  certificate: "*.yourdomain.com"
+  customDomain:
+    domainName: ${self:custom.domain}
+    stage: ${self:custom.stage}
+    basePath: ${self:custom.stage}
+    certificateName: ${self:custom.certificate}
+    createRoute53Record: true
+
+provider:
+  name: aws
+  runtime: go1.x
+  stage: dev
+  region: us-east-1
+
+plugins:
+  - serverless-sam
+  - serverless-domain-manager
+
+package:
+  # Sets the packages to use in AWS, we only need binarys
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+resources:
+  Outputs:
+    BaseApiV1Id:
+      Value:
+        Ref: ApiGatewayRestApi
+      Export:
+        Name: ${self:custom.stage}-BaseApiV1Id
+
+    BaseApiV1RootId:
+      Value:
+        Fn::GetAtt:
+          - ApiGatewayRestApi
+          - RootResourceId
+      Export:
+        Name: ${self:custom.stage}-BaseApiV1RootId
+
+functions:
+  # Health endpoint
+  # - path: url path is /health
+  # - method: GET
+  # - cors: enabled CORS (Cross-Origin Resource Sharing) for browser cross domain api call
+  # - authorizer: non authenticated health route
+  health:
+    handler: bin/health
+    events:
+      - http:
+          path: health
+          method: get

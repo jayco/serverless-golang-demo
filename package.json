@@ -1,0 +1,10 @@
+{
+  "name": "api-v1-go",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-domain-manager": "^2.6.13",
+    "serverless-sam": "^0.2.0"
+  }
+}
