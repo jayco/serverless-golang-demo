@@ -30,7 +30,7 @@ func Handler(ctx context.Context, request Request) (Response, error) {
 		return Response{StatusCode: http.StatusNotFound, Headers: responseHeader}, nil
 	}
 
-	log.Printf("Request recieved  AWS.RequeystID: %v", lc.AwsRequestID)
+	log.Printf("Request received  AWS.RequestID: %v", lc.AwsRequestID)
 	return Response{StatusCode: http.StatusNoContent, Headers: responseHeader}, nil
 }
 
