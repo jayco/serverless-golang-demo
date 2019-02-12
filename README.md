@@ -60,7 +60,7 @@ resources:
 ### Adding routes
 
 Routes can be added by adding handler functions in the `internal/routes` folder.
-Routes should be placed in there own directory and then the handler method added to the `Makefile` build for exec files that can be debugged and tested locally.
+Routes should be placed in theirnpm own directory and then the handler method added to the `Makefile` build for exec files that can be debugged and tested locally.
 
 **Example**: Building a debug exec in the makefile:
 
@@ -138,7 +138,7 @@ Run the vscode debugger **Once** the lambda function has executed.
 
 You should be able step through the lambda function and debug as you would any local golang program:
 
-![Alt debug](imgs/debug.jpg)
+![Alt debug](imgs/demo.jpg)
 
 Running Tests
 
