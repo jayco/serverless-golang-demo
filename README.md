@@ -60,7 +60,7 @@ resources:
 ### Adding routes
 
 Routes can be added by adding handler functions in the `internal/routes` folder.
-Routes should be placed in theirnpm own directory and then the handler method added to the `Makefile` build for exec files that can be debugged and tested locally.
+Routes should be placed in their own directory and then the handler method added to the `Makefile` build for exec files that can be debugged and tested locally.
 
 **Example**: Building a debug exec in the makefile:
 
