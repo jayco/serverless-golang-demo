@@ -22,7 +22,7 @@ ifneq ($(shell test -a $(PWD)/.debug/dlv && echo 1), 1)
 	-e "GOOS=linux" \
 	-v $(PWD):/src \
 	-w /src/ lambci/lambda:build-go1.x \
-	go build -o .debug/dlv github.com/derekparker/delve/cmd/dlv
+	go build -o .debug/dlv github.com/go-delve/delve/cmd/dlv
 endif
 	@echo "Building health route"
 	@docker run \
